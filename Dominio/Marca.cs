@@ -15,6 +15,12 @@ namespace Dominio
         //    IdMarca = idMarca;
         //    Descripcion = desc;
         //}
+        public Marca() { }
+
+        public Marca(string marca)
+        {
+            Descripcion = marca;
+        }
 
         public override string ToString()
         {

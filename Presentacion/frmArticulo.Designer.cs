@@ -33,20 +33,20 @@
             this.tbDescripcion = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.Marca = new System.Windows.Forms.ListBox();
-            this.Categoria = new System.Windows.Forms.ListBox();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tbPrecio = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.tbProveedor = new System.Windows.Forms.TextBox();
             this.lblProveedor = new System.Windows.Forms.Label();
             this.tbStock = new System.Windows.Forms.TextBox();
             this.lblStock = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbImagen = new System.Windows.Forms.PictureBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cbMarca = new System.Windows.Forms.ComboBox();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.cbProveedor = new System.Windows.Forms.ComboBox();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -90,24 +90,6 @@
             this.lblMarca.TabIndex = 4;
             this.lblMarca.Text = "Marca";
             // 
-            // Marca
-            // 
-            this.Marca.FormattingEnabled = true;
-            this.Marca.ItemHeight = 25;
-            this.Marca.Location = new System.Drawing.Point(160, 166);
-            this.Marca.Name = "Marca";
-            this.Marca.Size = new System.Drawing.Size(271, 29);
-            this.Marca.TabIndex = 5;
-            // 
-            // Categoria
-            // 
-            this.Categoria.FormattingEnabled = true;
-            this.Categoria.ItemHeight = 25;
-            this.Categoria.Location = new System.Drawing.Point(160, 223);
-            this.Categoria.Name = "Categoria";
-            this.Categoria.Size = new System.Drawing.Size(271, 29);
-            this.Categoria.TabIndex = 7;
-            // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
@@ -117,37 +99,21 @@
             this.lblCategoria.TabIndex = 6;
             this.lblCategoria.Text = "Categoria";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(470, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 25);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Imagen";
-            // 
             // tbPrecio
             // 
-            this.tbPrecio.Location = new System.Drawing.Point(558, 228);
+            this.tbPrecio.Location = new System.Drawing.Point(160, 344);
             this.tbPrecio.Name = "tbPrecio";
-            this.tbPrecio.Size = new System.Drawing.Size(186, 31);
+            this.tbPrecio.Size = new System.Drawing.Size(271, 31);
             this.tbPrecio.TabIndex = 10;
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(479, 234);
+            this.lblPrecio.Location = new System.Drawing.Point(81, 344);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(73, 25);
             this.lblPrecio.TabIndex = 9;
             this.lblPrecio.Text = "Precio";
-            // 
-            // tbProveedor
-            // 
-            this.tbProveedor.Location = new System.Drawing.Point(160, 280);
-            this.tbProveedor.Name = "tbProveedor";
-            this.tbProveedor.Size = new System.Drawing.Size(271, 31);
-            this.tbProveedor.TabIndex = 12;
             // 
             // lblProveedor
             // 
@@ -160,36 +126,39 @@
             // 
             // tbStock
             // 
-            this.tbStock.Location = new System.Drawing.Point(557, 283);
+            this.tbStock.Location = new System.Drawing.Point(160, 399);
             this.tbStock.Name = "tbStock";
-            this.tbStock.Size = new System.Drawing.Size(187, 31);
+            this.tbStock.Size = new System.Drawing.Size(271, 31);
             this.tbStock.TabIndex = 14;
+            this.tbStock.Visible = false;
             // 
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(478, 287);
+            this.lblStock.Location = new System.Drawing.Point(88, 399);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(66, 25);
             this.lblStock.TabIndex = 13;
             this.lblStock.Text = "Stock";
+            this.lblStock.Visible = false;
             // 
-            // pictureBox1
+            // pbImagen
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(558, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(186, 146);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.pbImagen.Location = new System.Drawing.Point(488, 48);
+            this.pbImagen.Name = "pbImagen";
+            this.pbImagen.Size = new System.Drawing.Size(286, 225);
+            this.pbImagen.TabIndex = 15;
+            this.pbImagen.TabStop = false;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(466, 396);
+            this.btnAceptar.Location = new System.Drawing.Point(471, 396);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(147, 49);
             this.btnAceptar.TabIndex = 16;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -199,25 +168,60 @@
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
+            // cbMarca
+            // 
+            this.cbMarca.FormattingEnabled = true;
+            this.cbMarca.Location = new System.Drawing.Point(160, 161);
+            this.cbMarca.Name = "cbMarca";
+            this.cbMarca.Size = new System.Drawing.Size(271, 33);
+            this.cbMarca.TabIndex = 18;
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(160, 220);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(271, 33);
+            this.cbCategoria.TabIndex = 19;
+            // 
+            // cbProveedor
+            // 
+            this.cbProveedor.FormattingEnabled = true;
+            this.cbProveedor.Location = new System.Drawing.Point(160, 284);
+            this.cbProveedor.Name = "cbProveedor";
+            this.cbProveedor.Size = new System.Drawing.Size(271, 33);
+            this.cbProveedor.TabIndex = 20;
+            // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.Location = new System.Drawing.Point(488, 270);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(286, 41);
+            this.btnAgregarImagen.TabIndex = 21;
+            this.btnAgregarImagen.Text = "Agregar imagen";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.BtnAgregarImagen_Click);
             // 
             // frmArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 474);
+            this.Controls.Add(this.pbImagen);
+            this.Controls.Add(this.btnAgregarImagen);
+            this.Controls.Add(this.cbProveedor);
+            this.Controls.Add(this.cbCategoria);
+            this.Controls.Add(this.cbMarca);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbStock);
             this.Controls.Add(this.lblStock);
-            this.Controls.Add(this.tbProveedor);
             this.Controls.Add(this.lblProveedor);
             this.Controls.Add(this.tbPrecio);
             this.Controls.Add(this.lblPrecio);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Categoria);
             this.Controls.Add(this.lblCategoria);
-            this.Controls.Add(this.Marca);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.tbDescripcion);
             this.Controls.Add(this.lblDescripcion);
@@ -225,7 +229,8 @@
             this.Controls.Add(this.lblNombre);
             this.Name = "frmArticulo";
             this.Text = "Formulario articulo";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.frmArticulo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,18 +243,18 @@
         private System.Windows.Forms.TextBox tbDescripcion;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.ListBox Marca;
-        private System.Windows.Forms.ListBox Categoria;
         private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbPrecio;
         private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.TextBox tbProveedor;
         private System.Windows.Forms.Label lblProveedor;
         private System.Windows.Forms.TextBox tbStock;
         private System.Windows.Forms.Label lblStock;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbImagen;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cbMarca;
+        private System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.ComboBox cbProveedor;
+        private System.Windows.Forms.Button btnAgregarImagen;
     }
 }

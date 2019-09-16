@@ -42,7 +42,6 @@
             // 
             this.dgvPrincipal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrincipal.Enabled = false;
             this.dgvPrincipal.Location = new System.Drawing.Point(12, 123);
             this.dgvPrincipal.MultiSelect = false;
             this.dgvPrincipal.Name = "dgvPrincipal";
@@ -57,6 +56,7 @@
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(276, 31);
             this.tbBuscar.TabIndex = 1;
+            this.tbBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbBuscar_KeyPress);
             // 
             // lblBuscar
             // 
@@ -75,6 +75,7 @@
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // btnEliminar
             // 
@@ -84,6 +85,7 @@
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnVer
             // 
@@ -93,6 +95,7 @@
             this.btnVer.TabIndex = 5;
             this.btnVer.Text = "Ver detalle";
             this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.BtnVer_Click);
             // 
             // btnEditar
             // 
@@ -102,6 +105,7 @@
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // frmListadoArticulo
             // 

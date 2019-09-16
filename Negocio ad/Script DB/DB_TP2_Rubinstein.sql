@@ -15,26 +15,28 @@ IdProveedor int not null primary key identity(1,1),
 Nombre varchar (80) not null, 
 )
 go
+
+create table Categorias(
+IdCategoria int not null primary key identity (1,1),
+Descripcion varchar (50) not null
+)
+go
+
 create table Articulos(
 IdArticulo int not null primary key identity(1,1),
 Nombre varchar(60)not null,
 Descripcion varchar(80) not null,
 Marca int not null foreign key references Marcas(IdMarca),
 Proveedor int not null foreign key references Proveedores(IdProveedor),
+Categoria int not null foreign key references Categorias(IdCategoria),
 Imagen varchar (150),
 Precio decimal not null,
 Estado bit not null
 )
-go
-create table Categorias(
-IdCategoria int not null primary key identity (1,1),
-Descripcion varchar (50) not null
-)
-go
-create table ARTICULOS_X_CATEGORIAS(
-IdArticulo int not null foreign key references Articulos (IdArticulo),
-IdCategoria int not null foreign key references Categorias (IdCategoria)
-)
+--create table ARTICULOS_X_CATEGORIAS(
+--IdArticulo int not null foreign key references Articulos (IdArticulo),
+--IdCategoria int not null foreign key references Categorias (IdCategoria)
+--)
 go
 
 --MARCAS
@@ -77,16 +79,16 @@ INSERT INTO CATEGORIAS (DESCRIPCION) VALUES ('GOLOSINAS')
 GO
 
 --ARTICULOS
-INSERT INTO ARTICULOS (NOMBRE,DESCRIPCION,MARCA,PROVEEDOR,IMAGEN,PRECIO,ESTADO) VALUES ('PASO DE LOS TOROS','BEBIDA SABOR POMELO',1,1,'https://geant.vteximg.com.br/arquivos/ids/205793-1000-1000/590789.jpg?v=636403724489570000',45,1)
-INSERT INTO ARTICULOS (NOMBRE,DESCRIPCION,MARCA,PROVEEDOR,IMAGEN,PRECIO,ESTADO) VALUES ('CHOCOARROZ','SNACK A BASE DE ARROZ',9,2,'https://jumboargentina.vteximg.com.br/arquivos/ids/454619-750-750/Alfajor-Chocoarroz-Dulce-De-Leche-X25g-1-254927.jpg?v=636596202506870000',20,1)
-INSERT INTO ARTICULOS (NOMBRE,DESCRIPCION,MARCA,PROVEEDOR,IMAGEN,PRECIO,ESTADO) VALUES ('PAN ARTESANO','PAN ARTESANAL BIMBO',8,4,'https://www.superama.com.mx/Content/images/products/img_large/0750103046438L.jpg',30,0)
+INSERT INTO ARTICULOS (NOMBRE,DESCRIPCION,MARCA,CATEGORIA,PROVEEDOR,IMAGEN,PRECIO,ESTADO) VALUES ('PASO DE LOS TOROS','BEBIDA SABOR POMELO',1,1,1,'https://geant.vteximg.com.br/arquivos/ids/205793-1000-1000/590789.jpg',45,1)
+INSERT INTO ARTICULOS (NOMBRE,DESCRIPCION,MARCA,CATEGORIA,PROVEEDOR,IMAGEN,PRECIO,ESTADO) VALUES ('CHOCOARROZ','SNACK A BASE DE ARROZ',9,2,2,'https://jumboargentina.vteximg.com.br/arquivos/ids/454619-750-750/Alfajor-Chocoarroz-Dulce-De-Leche-X25g-1-254927.jpg?v=636596202506870000',20,1)
+INSERT INTO ARTICULOS (NOMBRE,DESCRIPCION,MARCA,CATEGORIA,PROVEEDOR,IMAGEN,PRECIO,ESTADO) VALUES ('PAN ARTESANO','PAN ARTESANAL BIMBO',8,3,4,'https://www.superama.com.mx/Content/images/products/img_large/0750103046438L.jpg',30,0)
 
 go
 
 -- CATEGORIAS_X_ARTICULO
-INSERT INTO ARTICULOS_X_CATEGORIAS (IDARTICULO, IDCATEGORIA) VALUES (1, 1)
-INSERT INTO ARTICULOS_X_CATEGORIAS (IDARTICULO, IDCATEGORIA) VALUES (2, 2)
-INSERT INTO ARTICULOS_X_CATEGORIAS (IDARTICULO, IDCATEGORIA) VALUES (3, 3)
+--INSERT INTO ARTICULOS_X_CATEGORIAS (IDARTICULO, IDCATEGORIA) VALUES (1, 1)
+--INSERT INTO ARTICULOS_X_CATEGORIAS (IDARTICULO, IDCATEGORIA) VALUES (2, 2)
+--INSERT INTO ARTICULOS_X_CATEGORIAS (IDARTICULO, IDCATEGORIA) VALUES (3, 6)
 --INSERT INTO ARTICULOS_X_CATEGORIAS (IDARTICULO, IDCATEGORIA) VALUES (4, 1)
 --INSERT INTO ARTICULOS_X_CATEGORIAS (IDARTICULO, IDCATEGORIA) VALUES (5, 1)
 --INSERT INTO ARTICULOS_X_CATEGORIAS (IDARTICULO, IDCATEGORIA) VALUES (6, 1)
@@ -135,8 +137,7 @@ select * from marcas
 Select art.IdArticulo, art.Nombre, art.Descripcion, M.Descripcion, Pro.Nombre,Cat.Descripcion, art.Imagen, art.Precio from ARTICULOS as art
 INNER JOIN Marcas as M on art.Marca = M.IdMarca
 INNER JOIN Proveedores as pro on art.Proveedor = pro.IdProveedor
-INNER JOIN ARTICULOS_X_CATEGORIAS as axc on art.IdArticulo=axc.IdArticulo
-INNER JOIN Categorias as cat on axc.IdCategoria=cat.IdCategoria
+INNER JOIN Categorias as cat on art.Categoria=cat.IdCategoria
 where art.Estado=1
 
-select descripcion from Marcas
+select * from articulos
