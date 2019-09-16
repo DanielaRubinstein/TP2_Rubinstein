@@ -61,10 +61,11 @@ namespace Presentacion
                     cbProveedor.Text = articulo.Proveedor.Descripcion;
                     tbPrecio.Text = articulo.Precio.ToString();
                     pbImagen.ImageLocation = articulo.Imagen;
-                    if (articulo.Marca != null)
-                    {
-                        cbMarca.SelectedValue = articulo.Marca.IdMarca;
-                    }
+
+                    //if (articulo.Marca != null)
+                    //{
+                    //    cbMarca.SelectedValue = articulo.Marca.IdMarca;
+                    //}
                     //if(articulo.categoria!=null)
                     //{
                     //    cbCategoria.SelectedValue = articulo.categoria.IdCategoria;
@@ -95,7 +96,7 @@ namespace Presentacion
             try
             {
                 //validaciones
-                if (tbNombre.Text.Trim() == "" || tbDescripcion.Text.Trim() == "" || cbMarca.Text.Trim() == "")
+                if (tbNombre.Text.Trim() == "" || tbDescripcion.Text.Trim() == "" || cbMarca.Text.Trim() == "" || cbCategoria.Text.Trim() == "" || cbProveedor.Text.Trim() == "" || tbPrecio.Text.Trim() == "")
                 {
                     MessageBox.Show("Estos datos son obligatorios");
                     return;

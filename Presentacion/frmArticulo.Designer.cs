@@ -37,8 +37,6 @@
             this.tbPrecio = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblProveedor = new System.Windows.Forms.Label();
-            this.tbStock = new System.Windows.Forms.TextBox();
-            this.lblStock = new System.Windows.Forms.Label();
             this.pbImagen = new System.Windows.Forms.PictureBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -124,29 +122,12 @@
             this.lblProveedor.TabIndex = 11;
             this.lblProveedor.Text = "Proveedor";
             // 
-            // tbStock
-            // 
-            this.tbStock.Location = new System.Drawing.Point(160, 399);
-            this.tbStock.Name = "tbStock";
-            this.tbStock.Size = new System.Drawing.Size(271, 31);
-            this.tbStock.TabIndex = 14;
-            this.tbStock.Visible = false;
-            // 
-            // lblStock
-            // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(88, 399);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(66, 25);
-            this.lblStock.TabIndex = 13;
-            this.lblStock.Text = "Stock";
-            this.lblStock.Visible = false;
-            // 
             // pbImagen
             // 
             this.pbImagen.Location = new System.Drawing.Point(488, 48);
             this.pbImagen.Name = "pbImagen";
             this.pbImagen.Size = new System.Drawing.Size(286, 225);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 15;
             this.pbImagen.TabStop = false;
             // 
@@ -172,6 +153,7 @@
             // 
             // cbMarca
             // 
+            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMarca.FormattingEnabled = true;
             this.cbMarca.Location = new System.Drawing.Point(160, 161);
             this.cbMarca.Name = "cbMarca";
@@ -180,6 +162,7 @@
             // 
             // cbCategoria
             // 
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(160, 220);
             this.cbCategoria.Name = "cbCategoria";
@@ -188,6 +171,7 @@
             // 
             // cbProveedor
             // 
+            this.cbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProveedor.FormattingEnabled = true;
             this.cbProveedor.Location = new System.Drawing.Point(160, 284);
             this.cbProveedor.Name = "cbProveedor";
@@ -216,8 +200,6 @@
             this.Controls.Add(this.cbMarca);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.tbStock);
-            this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblProveedor);
             this.Controls.Add(this.tbPrecio);
             this.Controls.Add(this.lblPrecio);
@@ -247,8 +229,6 @@
         private System.Windows.Forms.TextBox tbPrecio;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblProveedor;
-        private System.Windows.Forms.TextBox tbStock;
-        private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.PictureBox pbImagen;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;

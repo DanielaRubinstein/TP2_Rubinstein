@@ -54,7 +54,7 @@
             // 
             this.tbBuscar.Location = new System.Drawing.Point(163, 42);
             this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(276, 31);
+            this.tbBuscar.Size = new System.Drawing.Size(419, 31);
             this.tbBuscar.TabIndex = 1;
             this.tbBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbBuscar_KeyPress);
             // 

@@ -51,7 +51,7 @@ namespace Presentacion
             Articulo verDetalle;
             verDetalle = (Articulo)dgvPrincipal.CurrentRow.DataBoundItem;
             string ar = verDetalle.Imagen;
-            frmArticulo detalleArticulo = new frmArticulo(verDetalle);
+            frmDetalle detalleArticulo = new frmDetalle(verDetalle);
             detalleArticulo.ShowDialog();
 
             //Articulo articulo = new Articulo();
